@@ -340,6 +340,19 @@ class Router
         return (string) $obj == 'OK';
     }
 
+    public function logout()
+    {
+        $this->prepare();
+        $logoutXml = '<?xml version="1.0" encoding="UTF-8"?><request>
+		<Logout>1</Logout>
+		</request>
+		';
+        $xml = $this->http->postXml($this->getUrl('api/user/logout'), $logoutXml);
+        $obj = new \SimpleXMLElement($xml);
+        //Simple check if logout is OK.
+        return (string) $obj == 'OK';
+    }
+
     /**
      * Sets the data switch to enable or disable the mobile connection.
      *
@@ -393,5 +406,18 @@ class Router
             //Set it for future use.
             $this->http->setSecurity($obj->SesInfo, $obj->TokInfo);
         }
+    }
+
+    public function reboot()
+    {
+        $this->prepare();
+        $rebootXml = '<?xml version="1.0" encoding="UTF-8"?><request>
+		<Control>1</Control>
+		</request>
+		';
+        $xml = $this->http->postXml($this->getUrl('api/device/control'), $rebootXml);
+        $obj = new \SimpleXMLElement($xml);
+        //Simple check if reboot is OK.
+        return (string) $obj == 'OK';
     }
 }
