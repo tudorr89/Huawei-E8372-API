@@ -1,5 +1,5 @@
 {
-    "name": "tudorr89/Huawei-E8372-API",
+    "name": "tudorr89/huawei-e8372-api",
     "type": "library",
     "description": "A barebones API to interact with the Huawei E8372 modem",
     "homepage": "https://github.com/tudorr89/Huawei-E8372-API",
