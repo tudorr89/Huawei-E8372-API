@@ -1,15 +1,15 @@
 {
-    "name": "hsp-dev/huawei-api",
+    "name": "tudorr89/Huawei-E8372-API",
     "type": "library",
-    "description": "A barebones API to interact with the Huawei E5180 router",
-    "homepage": "https://github.com/HSPDev/Huawei-E5180-API",
-    "keywords": ["api","E5180"],
+    "description": "A barebones API to interact with the Huawei E8372 modem",
+    "homepage": "https://github.com/tudorr89/Huawei-E8372-API",
+    "keywords": ["api","E8372"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Henrik Sylvester Pedersen",
-            "email": "hsp@hsp.dk",
-            "homepage": "http://blog.hsp.dk",
+            "name": "Tudor Rusu",
+            "email": "tudorr89@gmail.com",
+            "homepage": "https://hostingonthe.cloud",
             "role": "Developer"
         }
     ],

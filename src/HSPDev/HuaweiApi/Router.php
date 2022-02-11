@@ -213,7 +213,7 @@ class Router
      *
      * @return SimpleXMLElement
      */
-    public function getInbox($page = 1, $count = 20, $unreadPreferred = false)
+    public function getSms($page = 1, $count = 20, $unreadPreferred = false, $type = 1)
     {
         //Makes sure we are ready for the next request.
         $this->prepare();
@@ -221,7 +221,7 @@ class Router
         $inboxXml = '<?xml version="1.0" encoding="UTF-8"?><request>
 			<PageIndex>'.$page.'</PageIndex>
 			<ReadCount>'.$count.'</ReadCount>
-			<BoxType>1</BoxType>
+			<BoxType>'.$type.'</BoxType>
 			<SortType>0</SortType>
 			<Ascending>0</Ascending>
 			<UnreadPreferred>'.($unreadPreferred ? '1' : '0').'</UnreadPreferred>
@@ -231,6 +231,16 @@ class Router
         $obj = new \SimpleXMLElement($xml);
 
         return $obj;
+    }
+
+    public function getInbox()
+    {
+        return $this->getSms(1, 20, false, 1);
+    }
+
+    public function getOutbox()
+    {
+        return $this->getSms(1, 20, false, 2);
     }
 
     /**
